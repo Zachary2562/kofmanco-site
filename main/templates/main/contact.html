@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Contact - KofmanCo{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-bold text-indigo-600 mb-4">Contact Us</h1>
+<p class="mb-6 text-gray-600">We'd love to hear from you! Fill out the form below and we'll get back to you soon.</p>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="bg-green-100 text-green-800 p-3 rounded mb-4">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+
+<form method="post" class="max-w-lg mx-auto bg-white p-6 rounded shadow">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="mb-4">
+        {{ form.name.label_tag }}<br>
+        {{ form.name }}
+        {{ form.name.errors }}
+    </div>
+    <div class="mb-4">
+        {{ form.email.label_tag }}<br>
+        {{ form.email }}
+        {{ form.email.errors }}
+    </div>
+    <div class="mb-4">
+        {{ form.message.label_tag }}<br>
+        {{ form.message }}
+        {{ form.message.errors }}
+    </div>
+    <button type="submit" class="btn">Send Message</button>
+</form>
+{% endblock %} 

@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Products - KofmanCo{% endblock %}
+
+{% block content %}
+<h1 style="color: var(--accent); margin-bottom: 2rem; text-align: center;">Products</h1>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; background: var(--bg-main); padding: 0; border-radius: 0; box-shadow: none;">
+    <div style="background: var(--bg-card); border-radius: 12px; box-shadow: 0 2px 12px rgba(30,41,59,0.07); padding: 2rem; width: 340px; position: relative; display: flex; flex-direction: column; align-items: flex-start; border: 1px solid #e2e8f0;">
+        <h2 style="color: var(--accent); font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem;">PricePilot</h2>
+        <p style="color: var(--text-main); margin-bottom: 1.2rem;">AI-powered stock and mutual fund forecasting with proven long-term accuracy.</p>
+        <span style="color: var(--accent); font-weight: 600; margin-bottom: 1rem;">Key: Long-term accuracy, advanced AI</span>
+        <a href="{% url 'main:pricepilot_detail' %}" class="btn" style="margin-top: auto;">Learn More</a>
+    </div>
+</div>
+{% endblock %} 

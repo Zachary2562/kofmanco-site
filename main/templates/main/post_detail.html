@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ post.title }} - KofmanCo{% endblock %}
+
+{% block content %}
+<article>
+    <header style="margin-bottom: 2rem;">
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem 1rem; border-radius: 8px 8px 0 0; text-align: center;">
+            <h1 style="color: #fff; font-size: 2.2rem; font-weight: bold; margin-bottom: 0.5rem; line-height: 1.2;">{{ post.title }}</h1>
+            <div class="post-meta" style="color: #e0e7ff; font-size: 1rem;">
+                Published: {{ post.published_date|date:"F j, Y" }}
+            </div>
+        </div>
+    </header>
+    
+    <div style="line-height: 1.8; font-size: 1.1rem;">
+        {{ post.content|linebreaks }}
+    </div>
+    
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+        <a href="{% url 'main:post_list' %}" class="btn">
+            ← Back to Posts
+        </a>
+        <a href="{% url 'main:home' %}" class="btn" style="margin-left: 1rem;">
+            Home
+        </a>
+    </div>
+</article>
+{% endblock %} 
